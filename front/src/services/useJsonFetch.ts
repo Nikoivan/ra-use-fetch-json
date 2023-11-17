@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 
-export default async function useJsonFetch(url: string) {
-  const [data, setData] = useState([]);
+export type UseJsonType = [{ status: string } | undefined, boolean, boolean];
+
+export default function useJsonFetch(url: string): UseJsonType {
+  const [data, setData] = useState();
   const [isLoading, setLoading] = useState(false);
   const [hasError, setError] = useState<boolean>(false);
-  const timestampRef = useRef();
+  const timestampRef = useRef<number>();
 
   useEffect(() => {
     (async () => {
