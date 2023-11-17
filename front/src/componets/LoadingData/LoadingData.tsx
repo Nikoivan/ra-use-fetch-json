@@ -6,7 +6,6 @@ const LoadingData = (): ReactNode => {
   const [data, isLoading, hasError] = useJsonFetch(
     "http://localhost:7070/loading"
   );
-  console.log(data);
 
   return (
     <div className="Data">

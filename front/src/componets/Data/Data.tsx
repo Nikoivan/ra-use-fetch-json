@@ -6,7 +6,6 @@ const Data = (): ReactNode => {
   const [data, isLoading, hasError] = useJsonFetch(
     "http://localhost:7070/data"
   );
-  console.log(data);
 
   return (
     <div className="Data">
